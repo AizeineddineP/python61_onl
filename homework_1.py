@@ -64,5 +64,5 @@ print(f"{days} суток = {days * 24} часов = {days * 24 * 60} минут
 # если прошло 182 дня.
 
 days_1 = 182
-weeks = days // 7
+weeks = days_1 // 7
 print(f"За {days_1} дней прошло {weeks} полных недель.")
