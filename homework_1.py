@@ -28,16 +28,16 @@ print(20 % 9 + 9 - 4 / 2 - 1 / 2)
 # Анна пошла в магазин, у неё было 11 рублей. Хлеб стоит 1 рубль 50 копеек.
 # анна купила 3 буханки хлеба. Сколько рублей у неё осталось?
 
-# money_anna = a
-a = 11
-# cost_bread = b
-b = 1.50
-# number_of_bread_bought = c
-c = 3
-# money_of_anna_after_shopping = d
-d = a - (b * c)
 
-print(d)
+money_anna = 11
+
+cost_bread = 1.50
+
+number_of_bread_bought = 3
+
+money_of_anna_after_shopping = money_anna - (cost_bread * number_of_bread_bought)
+
+print(money_of_anna_after_shopping)
 
 #  task num_4
 #  У Анны 2 яблока, у Пола 5 яблок.
