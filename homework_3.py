@@ -126,4 +126,3 @@ for char in input_string:
 # Выводим результат
 for char in unique_chars:
     print(char, end="")
-
