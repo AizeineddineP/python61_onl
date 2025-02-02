@@ -48,5 +48,48 @@ print(get_element(lst, 2))  # Вывод: 30
 print(get_element(lst, 5))  # Вывод: Ошибка: индекс вне диапазона
 
 
-# НЕ ПОНЯЛ КАК
-# НЕ ПОНЯЛ КАК
+def retry_on_exception(retries):
+    def decorator(func):
+        def wrapper(*args, **kwargs):
+            for attempt in range(retries):
+                try:
+                    return func(*args, **kwargs)
+                except ValueError as e:
+                    print(f"Ошибка: {e}. Повтор {attempt + 1}/{retries}")
+            raise ValueError(f"Функция не удалась после {retries} попыток.")
+
+        return wrapper
+
+    return decorator
+
+
+import threading
+
+#####################################
+def timeout(limit):
+    def decorator(func):
+        def wrapper(*args, **kwargs):
+            result = [None]  # Используем список для хранения результата
+            exception = [None]
+
+            def target():
+                try:
+                    result[0] = func(*args, **kwargs)  # Выполняем функцию
+                except Exception as e:
+                    exception[0] = e  # Сохраняем исключение, если оно есть
+
+            thread = threading.Thread(target=target)
+            thread.start()
+            thread.join(limit)  # Ждём завершения, но не дольше limit секунд
+
+            if thread.is_alive():  # Если поток не завершился за limit секунд
+                raise TimeoutError(f"Функция превысила лимит {limit} секунд")
+
+            if exception[0]:  # Если функция выбросила исключение, передаём его дальше
+                raise exception[0]
+
+            return result[0]  # Возвращаем результат функции
+
+        return wrapper
+
+    return decorator
