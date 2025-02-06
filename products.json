@@ -1,0 +1,20 @@
+[
+    {
+        "name": "Table",
+        "quantity": 100,
+        "price": 450,
+        "arrival_date": "10.09.2023"
+    },
+    {
+        "name": "Board",
+        "quantity": 1000,
+        "price": 2590,
+        "arrival_date": "28.12.2023"
+    },
+    {
+        "name": "Chair",
+        "quantity": 800,
+        "price": 2500,
+        "arrival_date": "12.01.2025"
+    }
+]
