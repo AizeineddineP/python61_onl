@@ -116,20 +116,21 @@ with open("people.json", "w") as json.file:
 import json
 import csv
 
-# Указываем кодировку
+
 encoding = "utf-8"
 
-# Чтение JSON данных из файла
+# Чтение
 with open("people.json", "r", encoding=encoding) as file:
     data = json.load(file)
 
-# Запись данных в CSV файл
+# Запись
 with open("people.csv", "w", encoding=encoding, newline="") as file:
     writer = csv.writer(file, delimiter=';')
-    # Записываем заголовки
+
     writer.writerow(["person_id", "name", "age"])  # Заголовки CSV файла
 
     # Обрабатываем каждый элемент списка people
+    # здесь была моя ошибка!!!!
     for index, person in enumerate(data.get("people", []), start=1):
         try:
             name = person["name"]
