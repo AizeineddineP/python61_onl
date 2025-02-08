@@ -41,3 +41,4 @@ for word in words:
     cleaned_words.append(new_word)
 
 print(*cleaned_words)
+#
