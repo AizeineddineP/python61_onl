@@ -1,0 +1,79 @@
+-- CREATE TABLE actors (
+--     id INTEGER PRIMARY KEY AUTOINCREMENT,
+--     name TEXT NOT NULL,
+--     surname TEXT NOT NULL,
+--     age INTEGER CHECK (age BETWEEN 5 AND 99),
+--     live_in TEXT,
+--     bank_account_budget INTEGER DEFAULT 10000000,
+--     status TEXT CHECK (status IN ('single', 'married', 'divorced')),
+--     sex TEXT CHECK (sex IN ('male', 'female')) NOT NULL
+-- );
+
+
+-- INSERT INTO actors (name, surname, age, live_in, bank_account_budget, status, sex) VALUES
+-- ('Tom', 'Hanks', 65, 'Los Angeles', 15000000, 'married', 'male'),
+-- ('Meryl', 'Streep', 72, 'New York', 20000000, 'married', 'female'),
+-- ('Leonardo', 'DiCaprio', 47, 'Los Angeles', 25000000, 'single', 'male'),
+-- ('Scarlett', 'Johansson', 37, 'New York', 18000000, 'divorced', 'female'),
+-- ('Brad', 'Pitt', 58, 'Los Angeles', 22000000, 'divorced', 'male'),
+-- ('Angelina', 'Jolie', 46, 'Los Angeles', 21000000, 'divorced', 'female'),
+-- ('Johnny', 'Depp', 58, 'Paris', 19000000, 'single', 'male'),
+-- ('Emma', 'Watson', 32, 'London', 12000000, 'single', 'female'),
+-- ('Robert', 'Downey Jr.', 56, 'Malibu', 30000000, 'married', 'male'),
+-- ('Jennifer', 'Lawrence', 31, 'Los Angeles', 16000000, 'single', 'female'),
+-- ('Chris', 'Hemsworth', 38, 'Sydney', 17000000, 'married', 'male'),
+-- ('Natalie', 'Portman', 40, 'Los Angeles', 14000000, 'married', 'female'),
+-- ('Will', 'Smith', 53, 'Los Angeles', 23000000, 'married', 'male'),
+-- ('Charlize', 'Theron', 46, 'Los Angeles', 19000000, 'single', 'female'),
+-- ('Denzel', 'Washington', 67, 'Los Angeles', 24000000, 'married', 'male');
+
+-- ALTER TABLE actors ADD COLUMN count_movies INTEGER;
+
+-- UPDATE actors SET count_movies = 50 WHERE id = 1;
+-- UPDATE actors SET count_movies = 45 WHERE id = 2;
+-- UPDATE actors SET count_movies = 60 WHERE id = 3;
+-- UPDATE actors SET count_movies = 40 WHERE id = 4;
+-- UPDATE actors SET count_movies = 55 WHERE id = 5;
+-- UPDATE actors SET count_movies = 35 WHERE id = 6;
+-- UPDATE actors SET count_movies = 30 WHERE id = 7;
+-- UPDATE actors SET count_movies = 25 WHERE id = 8;
+-- UPDATE actors SET count_movies = 70 WHERE id = 9;
+-- UPDATE actors SET count_movies = 20 WHERE id = 10;
+-- UPDATE actors SET count_movies = 15 WHERE id = 11;
+-- UPDATE actors SET count_movies = 10 WHERE id = 12;
+-- UPDATE actors SET count_movies = 65 WHERE id = 13;
+-- UPDATE actors SET count_movies = 30 WHERE id = 14;
+-- UPDATE actors SET count_movies = 75 WHERE id = 15;
+--
+-- ALTER TABLE actors RENAME COLUMN surname TO last_name;
+
+-- ALTER TABLE actors ADD COLUMN country_in TEXT;
+
+-- UPDATE actors SET country_in = 'USA' WHERE live_in IN ('Los Angeles', 'New York', 'Malibu');
+-- UPDATE actors SET country_in = 'France' WHERE live_in = 'Paris';
+-- UPDATE actors SET country_in = 'UK' WHERE live_in = 'London';
+-- UPDATE actors SET country_in = 'Australia' WHERE live_in = 'Sydney';
+--
+-- SELECT * FROM actors WHERE age > 26;
+--
+-- SELECT * FROM actors WHERE bank_account_budget > 50000 ORDER BY bank_account_budget DESC;
+--
+-- SELECT COUNT(*) FROM actors WHERE sex = 'male' AND age > 55;
+--
+-- SELECT * FROM actors WHERE count_movies >= 22 AND bank_account_budget = 10000000;
+--
+-- SELECT * FROM actors WHERE live_in = 'Los Angeles';
+--
+-- SELECT * FROM actors WHERE name LIKE 'A%';
+--
+-- SELECT * FROM actors WHERE sex = 'female' AND age > 30 AND country_in = 'USA';
+--
+-- SELECT * FROM actors WHERE live_in IS NULL;
+--
+-- SELECT * FROM actors WHERE bank_account_budget = 0;
+--
+-- SELECT * FROM actors ORDER BY bank_account_budget DESC LIMIT 5;
+--
+-- SELECT * FROM actors ORDER BY age DESC;
+--
+-- SELECT * FROM actors WHERE status = 'single' AND age < 50;
